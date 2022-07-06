@@ -1,0 +1,655 @@
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 1
+Enter rows: 4
+Enter columns: 1
+How would you like to populate?
+(1) Identity Matrix
+(2) All single element
+(3) Random elements
+2
+Enter an integer: 5
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 4
+Choose a matrix
+----------
+| 1 |
+----------
+Matrix: 1
+|   5 |
+|   5 |
+|   5 |
+|   5 |
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 1
+Enter rows: 4
+Enter columns: 4
+How would you like to populate?
+(1) Identity Matrix
+(2) All single element
+(3) Random elements
+3
+Enter lower bound: 1
+Enter upper bound: 50
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 7
+Choose a matrix
+----------
+| 1 2 |
+----------
+Matrix 1: 1
+Matrix 2: 2
+|Matrix Multiplication|
+Invalid multiplication dimensions...
+Returning 2x2 ID
+Created new matrix 3
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 7
+Choose a matrix
+----------
+| 1 2 3 |
+----------
+Matrix 1: 2
+Matrix 2: 1
+|Matrix Multiplication|
+finished at Tue Feb 26 00:59:43 2019
+elapsed time: 2.075e-06s
+
+Created new matrix 4
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 4
+Choose a matrix
+----------
+| 1 2 3 4 |
+----------
+Matrix: 4
+| 665 |
+| 445 |
+| 580 |
+| 600 |
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 8
+Choose a matrix
+----------
+| 1 2 3 4 |
+----------
+Matrix: 4
+Scalar: 10 
+Created new matrix 5
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 4
+Choose a matrix
+----------
+| 1 2 3 4 5 |
+----------
+Matrix: 5
+|6650 |
+|4450 |
+|5800 |
+|6000 |
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 1
+Enter rows: 10
+Enter columns: 10
+How would you like to populate?
+(1) Identity Matrix
+(2) All single element
+(3) Random elements
+1
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 4
+Choose a matrix
+----------
+| 1 2 3 4 5 6 |
+----------
+Matrix: 6
+|   1    0    0    0    0    0    0    0    0    0 |
+|   0    1    0    0    0    0    0    0    0    0 |
+|   0    0    1    0    0    0    0    0    0    0 |
+|   0    0    0    1    0    0    0    0    0    0 |
+|   0    0    0    0    1    0    0    0    0    0 |
+|   0    0    0    0    0    1    0    0    0    0 |
+|   0    0    0    0    0    0    1    0    0    0 |
+|   0    0    0    0    0    0    0    1    0    0 |
+|   0    0    0    0    0    0    0    0    1    0 |
+|   0    0    0    0    0    0    0    0    0    1 |
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 1
+Enter rows: 10
+Enter columns: 10
+How would you like to populate?
+(1) Identity Matrix
+(2) All single element
+(3) Random elements
+3
+Enter lower bound: 5
+Enter upper bound: 8
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 5
+Choose a matrix
+----------
+| 1 2 3 4 5 6 7 |
+----------
+Matrix 1: 6
+Matrix 2: 7
+Created new matrix 8
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 4
+Choose a matrix
+----------
+| 1 2 3 4 5 6 7 8 |
+----------
+Matrix: 8
+|   9    5    7    5    8    5    8    7    6    6 |
+|   5    7    8    7    6    5    7    5    7    7 |
+|   6    7    6    6    8    5    8    5    8    5 |
+|   6    8    5    9    8    8    8    7    6    5 |
+|   5    7    6    8    6    7    5    7    8    7 |
+|   5    5    5    6    6    9    6    6    5    5 |
+|   6    6    8    6    5    8    7    5    6    7 |
+|   5    6    5    7    6    6    5    7    8    8 |
+|   8    5    8    5    6    6    8    7    8    8 |
+|   7    8    5    7    5    6    6    6    6    8 |
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 2
+Choose a matrix
+----------
+| 1 2 3 4 5 6 7 8 |
+----------
+Matrix: 8
+Enter rows: 1
+Enter columns: 1
+Enter element: 9999
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 4
+Choose a matrix
+----------
+| 1 2 3 4 5 6 7 8 |
+----------
+Matrix: 8
+|9999    5    7    5    8    5    8    7    6    6 |
+|   5    7    8    7    6    5    7    5    7    7 |
+|   6    7    6    6    8    5    8    5    8    5 |
+|   6    8    5    9    8    8    8    7    6    5 |
+|   5    7    6    8    6    7    5    7    8    7 |
+|   5    5    5    6    6    9    6    6    5    5 |
+|   6    6    8    6    5    8    7    5    6    7 |
+|   5    6    5    7    6    6    5    7    8    8 |
+|   8    5    8    5    6    6    8    7    8    8 |
+|   7    8    5    7    5    6    6    6    6    8 |
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 6
+Choose a matrix
+----------
+| 1 2 3 4 5 6 7 8 |
+----------
+Matrix 1: 8
+Matrix 2: 7
+Created new matrix 9
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 4
+Choose a matrix
+----------
+| 1 2 3 4 5 6 7 8 9 |
+----------
+Matrix: 9
+|9991    0    0    0    0    0    0    0    0    0 |
+|   0    1    0    0    0    0    0    0    0    0 |
+|   0    0    1    0    0    0    0    0    0    0 |
+|   0    0    0    1    0    0    0    0    0    0 |
+|   0    0    0    0    1    0    0    0    0    0 |
+|   0    0    0    0    0    1    0    0    0    0 |
+|   0    0    0    0    0    0    1    0    0    0 |
+|   0    0    0    0    0    0    0    1    0    0 |
+|   0    0    0    0    0    0    0    0    1    0 |
+|   0    0    0    0    0    0    0    0    0    1 |
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 8
+Choose a matrix
+----------
+| 1 2 3 4 5 6 7 8 9 |
+----------
+Matrix: 9
+Scalar: -1
+Created new matrix 10
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 4
+Choose a matrix
+----------
+| 1 2 3 4 5 6 7 8 9 10 |
+----------
+Matrix: 10
+|-9991    0    0    0    0    0    0    0    0    0 |
+|   0   -1    0    0    0    0    0    0    0    0 |
+|   0    0   -1    0    0    0    0    0    0    0 |
+|   0    0    0   -1    0    0    0    0    0    0 |
+|   0    0    0    0   -1    0    0    0    0    0 |
+|   0    0    0    0    0   -1    0    0    0    0 |
+|   0    0    0    0    0    0   -1    0    0    0 |
+|   0    0    0    0    0    0    0   -1    0    0 |
+|   0    0    0    0    0    0    0    0   -1    0 |
+|   0    0    0    0    0    0    0    0    0   -1 |
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 1
+Enter rows: 1000
+Enter columns: 1000
+How would you like to populate?
+(1) Identity Matrix
+(2) All single element
+(3) Random elements
+3
+Enter lower bound: 0
+Enter upper bound: 999
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 1
+Enter rows: 1000
+Enter columns: 1000
+How would you like to populate?
+(1) Identity Matrix
+(2) All single element
+(3) Random elements
+2
+Enter an integer: 55
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 7
+Choose a matrix
+----------
+| 1 2 3 4 5 6 7 8 9 10 11 12 |
+----------
+Matrix 1: 11
+Matrix 2: 12
+|Matrix Multiplication|
+finished at Tue Feb 26 01:04:12 2019
+elapsed time: 10.4851s
+
+Created new matrix 13
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 7
+Choose a matrix
+----------
+| 1 2 3 4 5 6 7 8 9 10 11 12 13 |
+----------
+Matrix 1: 13
+Matrix 2: 12
+|Matrix Multiplication|
+finished at Tue Feb 26 01:04:58 2019
+elapsed time: 10.3044s
+
+Created new matrix 14
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 1
+Enter rows: 5000
+Enter columns: 30
+How would you like to populate?
+(1) Identity Matrix
+(2) All single element
+(3) Random elements
+3
+Enter lower bound: -100
+Enter upper bound: 100
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 1
+Enter rows: 30
+Enter columns: 70
+How would you like to populate?
+(1) Identity Matrix
+(2) All single element
+(3) Random elements
+3
+Enter lower bound: 96
+Enter upper bound: 300
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 7
+Choose a matrix
+----------
+| 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 |
+----------
+Matrix 1: 15
+Matrix 2: 16
+|Matrix Multiplication|
+finished at Tue Feb 26 01:05:57 2019
+elapsed time: 0.112796s
+
+Created new matrix 17
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 1
+Enter rows: 9999  
+Enter columns: 9999
+How would you like to populate?
+(1) Identity Matrix
+(2) All single element
+(3) Random elements
+3
+Enter lower bound: 1
+Enter upper bound: 50
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 1
+Enter rows: 9999
+Enter columns: 1
+How would you like to populate?
+(1) Identity Matrix
+(2) All single element
+(3) Random elements
+3
+Enter lower bound: -10
+Enter upper bound: 80
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 8
+Choose a matrix
+----------
+| 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 |
+----------
+Matrix: 18
+Scalar: 19
+Created new matrix 20
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 4
+Choose a matrix
+----------
+| 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 |
+----------
+Matrix: 1
+|   5 |
+|   5 |
+|   5 |
+|   5 |
+
+====Menu====
+(1) Create a new matrix
+(2) Change an element of a matrix
+(3) Display matrices
+(4) Display a matrix
+(5) Add two matrices
+(6) Subtract two matrices
+(7) Multiply two matrices
+(8) Multiply a matrix by a scalar
+(9) Exit
+Choice: 9
+

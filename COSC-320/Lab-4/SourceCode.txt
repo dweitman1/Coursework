@@ -1,0 +1,638 @@
+/* Author: Daniel Weitman
+ * Course: COSC-320
+ * Instructor: Anderson
+ * Due: 2/28/19
+ * 
+ */
+
+#include <iostream>
+#include <vector>
+#include "matrix.h"
+
+using namespace std;
+
+/* Description: Displays every matrix in the list
+ * Parameters: int size
+ * Return: void
+ */
+void display(int size){
+    cout << "----------\n| ";
+    for(int i = 0; i < size; i++){
+        cout << i + 1 << " ";
+    }
+    cout << "|\n----------" << endl;
+}
+
+int main(){
+    
+    srand(time(0));
+    
+    vector<matrix> list;
+    int x;
+    matrix add;
+    
+    do{
+        cout << "====Menu====" << endl;
+        cout << "(1) Create a new matrix" << endl;
+        cout << "(2) Change an element of a matrix" << endl;
+        cout << "(3) Display matrices" << endl;
+        cout << "(4) Display a matrix" << endl;
+        cout << "(5) Add two matrices" << endl;
+        cout << "(6) Subtract two matrices" << endl;
+        cout << "(7) Multiply two matrices" << endl;
+        cout << "(8) Multiply a matrix by a scalar" << endl;
+        cout << "(9) Exit" << endl;
+        
+        cout << "Choice: ";
+        cin >> x;
+        
+        switch (x){
+            case 1:
+                int r, c;
+                cout << "Enter rows: ";
+                cin >> r;
+                cout << "Enter columns: ";
+                cin >> c;
+                add.setDim(r, c);
+                int pop;
+                cout << "How would you like to populate?\n";
+                cout << "(1) Identity Matrix\n";
+                cout << "(2) All single element\n";
+                cout << "(3) Random elements\n";
+                cin >> pop;
+                
+                if(pop == 2){
+                    int ele;
+                    cout << "Enter an integer: ";
+                    cin >> ele;
+                    add.populateME(ele);
+                } else if(pop == 3){
+                    int low;
+                    int high;
+                    cout << "Enter lower bound: ";
+                    cin >> low;
+                    cout << "Enter upper bound: ";
+                    cin >> high;
+                    add.populateMR(low, high);
+                    
+                }
+                
+                list.push_back(add);
+                
+                break;
+                
+            case 2:
+                if(list.size() <= 0){
+                    break;
+                }
+                cout << "Choose a matrix\n";
+                display(list.size());
+                int m, e, ro, co;
+                do{
+                    cout << "Matrix: ";
+                    cin >> m;
+                } while (m > list.size() || m <= 0);
+                
+                cout << "Enter rows: ";
+                cin >> ro;
+                cout << "Enter columns: ";
+                cin >> co;
+                cout << "Enter element: ";
+                cin >> e;
+                
+                list[m - 1].setElement(e, ro - 1, co - 1);
+                
+                break;
+                
+            case 3:
+                display(list.size());
+                if(list.size() <= 0){
+                    cout << "No matrices created!" << endl;
+                }
+                
+                break;
+                
+            case 4:
+                if(list.size() <= 0){
+                    break;
+                }
+                cout << "Choose a matrix\n";
+                display(list.size());
+                int ma;
+                do{
+                    cout << "Matrix: ";
+                    cin >> ma;
+                } while (ma > list.size() || ma <= 0);
+                
+                
+                list[ma - 1].printM();
+                
+                break; 
+                
+            case 5:
+                if(list.size() < 2){
+                    cout << "Not enough matrices" << endl;
+                    break;
+                }
+                cout << "Choose a matrix\n";
+                display(list.size());
+                int m1;
+                int m2;
+                
+                do{
+                    cout << "Matrix 1: ";
+                    cin >> m1;
+                } while (m1 > list.size() || m1 <= 0);
+                
+                do{
+                    cout << "Matrix 2: ";
+                    cin >> m2;
+                } while (m2 > list.size() || m2 <= 0);
+                
+                add = list[m1 - 1] + list[m2 - 1];
+                list.push_back(add);
+                cout << "Created new matrix " << list.size() << endl << endl;
+                //add.printM();
+                
+                break;
+                
+            case 6:
+                
+                if(list.size() < 2){
+                    cout << "Not enough matrices" << endl;
+                    break;
+                }
+                cout << "Choose a matrix\n";
+                display(list.size());
+                int m11;
+                int m22;
+                
+                do{
+                    cout << "Matrix 1: ";
+                    cin >> m11;
+                } while (m11 > list.size() || m11 <= 0);
+                
+                do{
+                    cout << "Matrix 2: ";
+                    cin >> m22;
+                } while (m22 > list.size() || m22 <= 0);
+                
+                add = list[m11 - 1] - list[m22 - 1];
+                list.push_back(add);
+                cout << "Created new matrix " << list.size() << endl << endl;
+                //add.printM();
+                
+                break;
+                
+            case 7:
+                if(list.size() < 2){
+                    cout << "Not enough matrices" << endl;
+                    break;
+                }
+                cout << "Choose a matrix\n";
+                display(list.size());
+                int m111;
+                int m222;
+                
+                do{
+                    cout << "Matrix 1: ";
+                    cin >> m111;
+                } while (m111 > list.size() || m111 <= 0);
+                
+                do{
+                    cout << "Matrix 2: ";
+                    cin >> m222;
+                } while (m222 > list.size() || m222 <= 0);
+                
+                add = list[m111 - 1] * list[m222 - 1];
+                list.push_back(add);
+                cout << "Created new matrix " << list.size() << endl << endl;
+                //add.printM();
+                
+                break;
+                
+            case 8:
+                
+                if(list.size() < 1){
+                    cout << "Not enough matrices" << endl;
+                    break;
+                }
+                cout << "Choose a matrix\n";
+                display(list.size());
+                int m1111, scalar;
+                
+                do{
+                    cout << "Matrix: ";
+                    cin >> m1111;
+                } while (m1111 > list.size() || m1111 <= 0);
+                
+                cout << "Scalar: ";
+                cin >> scalar;
+                
+                add = list[m1111 - 1] * scalar;
+                list.push_back(add);
+                cout << "Created new matrix " << list.size() << endl << endl;
+                //add.printM();
+                
+                break;
+        }
+        
+    }while(x != 9);
+    
+    return 0;
+}
+#include <iostream>
+#include <iomanip>
+#include <chrono>
+#include <time.h>
+#include "matrix.h" 
+
+using namespace std;
+
+/* Description: Default constructor
+ * Parameters: none
+ * Return: n/a
+ */
+matrix::matrix(){
+    rows = 2;
+    columns = 2;
+    elements = 4;
+    
+    mat = new int*[rows];
+    
+    for(int i = 0; i < rows; i++){
+        mat[i]= new int[columns];
+    }
+    
+    populateMI();
+}
+
+/* Description: Constructor for nxn matrix
+ * Parameters: int n
+ * Return: n/a
+ */
+matrix::matrix(int n){
+    rows = n;
+    columns = n;
+    elements = n * n;
+    
+    if(rows < 0){
+        cout << "Invalid rows... defaulting to 1" << endl;
+        rows = 1;
+    }
+    if(columns < 0){
+        cout << "Invalid columns... defaulting to 1" << endl;
+        columns = 1;
+    }
+    
+    mat = new int*[rows];
+    
+    for(int i = 0; i < rows; i++){
+        mat[i]= new int[columns];
+    }
+    
+    populateMI();
+}
+
+/* Description: Constructor for rxc matrix
+ * Parameters: int r, int c
+ * Return: n/a
+ */
+matrix::matrix(int r, int c){
+    rows = r;
+    columns = c;
+    elements = r * c;
+    
+    if(rows < 0){
+        cout << "Invalid rows... defaulting to 1" << endl;
+        rows = 1;
+    }
+    if(columns < 0){
+        cout << "Invalid columns... defaulting to 1" << endl;
+        columns = 1;
+    }
+    
+    mat = new int*[rows];
+    
+    for(int i = 0; i < rows; i++){
+        mat[i]= new int[columns];
+    }
+    
+    populateMI();
+}
+
+/* Description: Constructor for rxc matrix
+ * Parameters: int r, int c, int e
+ * Return: n/a
+ */
+matrix::matrix(int r, int c, int e){
+    rows = r;
+    columns = c;
+    elements = r * c;
+    
+    if(r < 0){
+        cout << "Invalid rows... defaulting to 1" << endl;
+        rows = 1;
+    }
+    if(c < 0){
+        cout << "Invalid columns... defaulting to 1" << endl;
+        columns = 1;
+    }
+    
+    mat = new int*[rows];
+    
+    for(int i = 0; i < rows; i++){
+        mat[i]= new int[columns];
+    }
+    
+    populateME(e);
+}
+
+/* Description: Copy constructor for matrix object
+ * Parameters: const matrix &obj
+ * Return: n/a
+ */
+matrix::matrix(const matrix &obj){
+    rows = obj.rows;
+    columns = obj.columns;
+    elements = obj.elements;
+    
+    mat = new int*[rows];
+    for(int i = 0; i < rows; i++){
+        mat[i]= new int[columns];
+    }
+    
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++){
+            mat[i][j] = obj.mat[i][j];
+        }
+    }
+}
+
+/* Description: Destructor for matrix object
+ * Parameters: none
+ * Return: n/a
+ */
+matrix::~matrix(){
+    
+    for(int i = 0; i < rows; i++){
+        delete [] mat[i];
+    }
+    delete [] mat;
+    
+}
+
+/* Description: Function to print matrix
+ * Parameters: none
+ * Return: void
+ */
+void matrix::printM(){
+    for(int i = 0; i < rows; i++){
+        cout << "|";
+        for(int j = 0; j < columns; j++){
+            cout << setw(4) << mat[i][j] << " ";
+        }
+        cout << "|" << endl;
+    }
+    cout << endl;
+}
+
+/* Description: Function to populate matrix with ID
+ * Parameters: none
+ * Return: void
+ */
+void matrix::populateMI(){
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++){
+            if(i != j){
+                mat[i][j] = 0;
+            } else {
+                mat[i][j] = 1;
+            }
+        }
+    }
+}
+
+/* Description: Function to populate matrix with e
+ * Parameters: int e
+ * Return: void
+ */
+void matrix::populateME(int e){
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++){
+            mat[i][j] = e;
+        }
+    }
+}
+
+/* Description: Function to populate matrix with rand
+ * Parameters: int l, int u
+ * Return: void
+ */
+void matrix::populateMR(int l, int u){
+    if(u < l){
+        int t = l;
+        l = u;
+        u = t;
+    }
+    int range = (u - l) + 1;
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++){
+            mat[i][j] = (rand() % range) + l;
+        }
+    }
+}
+
+/* Description: Function to set new dimensions of a matrix
+ * Parameters: int r, int c
+ * Return: void
+ */
+void matrix::setDim(int r, int c){
+    matrix a(r, c);
+    *this = a;
+    
+}
+
+/* Description: Function to set elements 
+ * Parameters: int e, int r, int c
+ * Return: void
+ */  
+void matrix::setElement(int e, int r, int c){
+    if(r > rows || c > columns){
+        cout << "Invalid dimensions!" << endl;
+        return;
+    }
+    mat[r][c] = e;
+}
+
+/* Description: Function to get element of matrix
+ * Parameters: int r, int c
+ * Return: int
+ */
+int matrix::getElement(int r, int c){
+    return mat[r][c];
+}
+
+/* Description: Overloaded assignment operator
+ * Parameters: const matrix& obj
+ * Return: matrix
+ */
+matrix matrix::operator =(const matrix &obj){
+    
+    for(int i = 0; i < rows; i++){
+        delete [] mat[i];
+    }
+    delete [] mat;
+    
+    rows = obj.rows;
+    columns = obj.columns;
+    elements = obj.elements;
+    
+    mat = new int*[rows];
+    for(int i = 0; i < rows; i++){
+        mat[i]= new int[columns];
+    }
+    
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++){
+            mat[i][j] = obj.mat[i][j];
+        }
+    }
+    
+    return *this;
+}
+
+/* Description: Overloaded + operator
+ * Parameters: matrix& obj
+ * Return: matrix
+ */
+matrix matrix::operator +(matrix &obj){
+    if(rows != obj.rows || columns != obj.columns){
+        cout << "Invalid addition dimensions...\nReturning 2x2 ID" << endl;
+        matrix c;
+        return c;
+    }
+    matrix c(rows, columns);
+    
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++){
+            c.setElement((getElement(i, j) + obj.getElement(i, j)), i, j);
+            
+        }  
+    }
+    return c;
+}
+
+/* Description: Overloaded - operator
+ * Parameters: matrix& obj
+ * Return: matrix
+ */
+matrix matrix::operator -(matrix &obj){
+    if(rows != obj.rows || columns != obj.columns){
+        cout << "Invalid subtraction dimensions...\nReturning 2x2 ID" << endl;
+        matrix c;
+        return c;
+    }
+    matrix c(rows, columns);
+    
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++){
+            c.setElement((getElement(i, j) - obj.getElement(i, j)), i, j);
+            
+        }  
+    }
+    return c;
+}
+
+/* Description: Overloaded * operator
+ * Parameters: const matrix& obj
+ * Return: matrix
+ */
+matrix matrix::operator *(const matrix &obj){
+    cout << "|Matrix Multiplication|" << endl;
+    auto start = std::chrono::system_clock::now();
+    
+    try{
+        if(columns != obj.rows){
+            throw 0;
+        }
+        matrix c(rows, obj.columns);
+        
+        for(int i = 0; i < c.rows; i++){
+            for(int j = 0; j < c.columns; j++){
+                c.setElement(0, i, j);
+                for(int k = 0; k < columns; k++){
+                    c.setElement((c.mat[i][j]+=(mat[i][k]*obj.mat[k][j])), i, j); 
+                    
+                }
+            }  
+        }
+        
+        
+        auto end = std::chrono::system_clock::now();
+        std::chrono::duration<double> elapsed_seconds = end-start;
+        std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+        std::cout << "finished at " << std::ctime(&end_time)
+        << "elapsed time: " << elapsed_seconds.count() << "s\n";
+        
+        
+        cout << endl;
+        return c;
+    } catch (int e){
+        cout << "Invalid multiplication dimensions...\nReturning 2x2 ID" << endl;
+        matrix c;
+        return c;
+    }
+}
+
+/* Description: Overloaded * operator
+ * Parameters: double s
+ * Return: matrix
+ */
+matrix matrix::operator *(double s){
+    matrix c(rows, columns);
+    c = *this;
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++){
+            c.mat[i][j]*=s;
+            
+        }
+    }
+    return c;
+}
+#ifndef MATRIX_H
+#define MATRIX_H
+
+class matrix{
+    
+private:
+    int** mat;
+    int rows;
+    int columns;
+    int elements;
+    
+public: 
+    matrix();
+    matrix(int n);
+    matrix(int r, int c);
+    matrix(int r, int c, int e);
+    matrix(const matrix& obj);
+    ~matrix();
+    
+    void printM();
+    void populateMI();
+    void populateME(int e);
+    void populateMR(int l, int u);
+    void setDim(int r, int c);
+    void setElement(int e, int r, int c);
+    int getElement(int, int);
+    
+    matrix operator =(const matrix& obj);
+    matrix operator +(matrix& obj);
+    matrix operator -(matrix& obj);
+    matrix operator *(const matrix &obj);//obj * obj
+    matrix operator *(double s);//obj * s
+    
+};
+
+#endif

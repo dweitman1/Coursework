@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+	background-color: #02468a;
+    color: white;
+}
+fieldset{
+	background-color: #79a5ea;
+	border: 5px solid white;
+    border-radius: 10px;
+    width: 50px;
+    height: auto;
+    display: inline-block;
+    position: absolute;
+    left: 70%;
+    top: 10%;
+    
+}
+.tile{
+	color: black;
+    background-color: white;
+    width: 90px;	
+    height: 90px;
+    border: 1px solid;        
+    border-color: black;
+	font-family: verdana;
+    font-size: 30px;
+    margin: -3px;
+    cursor: pointer;
+}
+.colors{
+	width: 50px;
+	margin: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    cursor: crosshair;
+    border-radius: 10px;
+}
+.options{
+	color: lime;
+    background-color: gray;
+    border-radius: 10px;
+	width: 50px;
+    height: 50px;
+    border: 5px solid white;
+    font-size: 25px;
+    cursor: pointer;
+}
+.syms{
+	width: 15px;
+    border-radius: 3px;
+}
+#sett{
+	font-family: courier;
+	background-color: #79a5ea;
+    border-right: 15px double white;
+    padding: 10px;
+    font-size: 20px;
+    width: 25%;
+    height: 100%;
+	display: none;
+	position: fixed;
+    top: 0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+}
+#overlay{
+	background-color: rgba(0,0,0, 0.5);
+    font-family: verdana;
+    width: 100%;
+    height: 100%;
+	display: none;
+	position: fixed;
+    top: 0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+}
+#ws{
+	position: absolute;
+    left: 50%;
+    top: 50%;
+}
+</style>
+</head>
+
+<body>
+
+<div id="overlay" onclick="restart()"><center><fieldset style="background-color: rgba(0, 0, 0, .5); width: 200px;" id="ws"><h1 id="won"></h1></fieldset></center></div>
+
+<div id="sett">
+
+<u>Player 1</u><br>
+<input type="color" class="colors" id="c4" value="#000000">
+<input type="text" class="syms" id="X" value="X" maxlength="1">
+<br><br>
+
+<u>Player 2</u><br>
+<input type="color" class="colors" id="c5" value="#000000">
+<input type="text" class="syms" id="O" value="O" maxlength="1">
+<br><br>
+
+<u>Settings</u><br>
+<input type="color" class="colors" id="c1" value="#ffffff">Tiles<br>
+<input type="color" class="colors" id="c2" value="#000000">Lines<br>
+<input type="color" class="colors" id="c3" value="#00ff00">Win Tiles<br>
+<input type="button" class="colors" value="Apply" onclick="apply()" style="cursor: pointer; padding: 10px; width: 75px;">
+<input type="button" class="colors" value="Reset" onclick="reset()" style="cursor: pointer; padding: 10px; width: 75px;">
+</div>
+
+<fieldset>
+<center>
+<input type="button" class="options" style="color: lime;" value="&#8635;" onclick="restart()"><br><br>
+<input type="button" class="options" style="color: blue;" value="&#8285;" onclick="settings()">
+</center>
+</fieldset>
+<center>
+<h1><u>Tic-Tac-Toe</u></h1>
+
+
+<input type="button" class="tile" value=" " onclick="play(this.id)" id="t1">
+<input type="button" class="tile" value=" " onclick="play(this.id)" id="t2">
+<input type="button" class="tile" value=" " onclick="play(this.id)" id="t3"><br>
+<input type="button" class="tile" value=" " onclick="play(this.id)" id="t4">
+<input type="button" class="tile" value=" " onclick="play(this.id)" id="t5">
+<input type="button" class="tile" value=" " onclick="play(this.id)" id="t6"><br>
+<input type="button" class="tile" value=" " onclick="play(this.id)" id="t7">
+<input type="button" class="tile" value=" " onclick="play(this.id)" id="t8">
+<input type="button" class="tile" value=" " onclick="play(this.id)" id="t9"><br><br>
+
+</center>
+
+<script>
+var count = 0;
+var sym1 = 'X';
+var sym2 = 'O';
+var x = [];
+var str;
+var sColors = [];
+sColors[0] = document.getElementById("c1").value;
+sColors[1] = document.getElementById("c2").value;
+sColors[2] = document.getElementById("c3").value;
+
+
+function play(tid){
+    
+	
+		var x = document.getElementById(tid);
+
+        if(x.value == " "){
+   	 		if(count % 2 == 0){
+    			x.value = sym1;
+                x.style.color = document.getElementById("c4").value;
+       	 		count++;
+                if(count > 4){
+                	if(count != 9){
+                		winCheckX();
+                    } else {
+                    	winner();
+                    }
+                }
+    		} else {
+            	x.style.color = document.getElementById("c5").value;
+    			x.value = sym2;
+        		count++;
+                if(count > 5){
+                	winCheckO();
+                }
+    		}
+        }
+    
+}
+
+function restart(){
+	if(count == 0){
+   		alert("Cannot reset empty board");
+    }
+	count = 0;
+    document.getElementById("overlay").style.display = "none";
+    for(var i = 0; i < 9; i++){
+    	str = 't' + (i + 1);
+    	document.getElementById(str).value = " ";
+        document.getElementById(str).style.background = sColors[0];
+    }
+}
+
+function settings(){
+	var display = document.getElementById("sett");
+    if(display.style.display == "block"){
+    	display.style.display = "none";
+    } else if(display.style.display = "none"){
+    	display.style.display = "block";
+    }
+}
+
+function winner(){
+	document.getElementById("overlay").style.display = "block";
+    if(count == 9){
+    	document.getElementById("won").innerHTML = "Draw!";
+    } else if(count % 2 == 1){
+    	document.getElementById("won").innerHTML = "Player " + sym1 + " wins!";
+    } else {
+    	document.getElementById("won").innerHTML = "Player " + sym2 + " wins!";
+    }
+}
+
+function apply(){
+	
+	sColors[0] = document.getElementById("c1").value;
+	sColors[1] = document.getElementById("c2").value;
+	sColors[2] = document.getElementById("c3").value;
+    var a = document.getElementById("X").value;
+    var b = document.getElementById("O").value;
+    var t;
+    
+    for(var i = 0; i < 9; i++){
+    	str = 't' + (i + 1);
+        t = document.getElementById(str);
+        
+        if(t.value == sym1){
+            t.style.color = document.getElementById("c4").value;
+            t.value = a;
+        }
+        if(t.value ==sym2){
+            t.style.color = document.getElementById("c5").value;
+            t.value = b;
+        }  
+        
+    	t.style.borderColor = sColors[1];
+        t.style.background = sColors[0];
+    }
+    sym1 = a;
+    sym2 = b;
+    
+    
+    
+    document.getElementById("sett").style.display = "none";
+}
+
+function reset(){
+
+	document.getElementById("c1").value = "#ffffff";
+	document.getElementById("c2").value = "#000000";
+	document.getElementById("c3").value = "#00ff00";
+    document.getElementById("c4").value = "#000000";
+    document.getElementById("c5").value = "#000000";
+    document.getElementById("X").value = "X";
+    document.getElementById("O").value = "O";
+    apply();
+}
+
+function winCheckX(){
+	for(var i = 0; i < 9; i++){
+    	str = 't' + (i + 1);
+    	x[i] = document.getElementById(str).value;
+        
+    }
+    sColors[2] = document.getElementById("c3").value;
+    
+    if(x[4] == sym1){
+    	if(x[0] == sym1 && x[8] == sym1){
+        	document.getElementById("t5").style.background = sColors[2];
+   			document.getElementById("t1").style.background = sColors[2];
+   			document.getElementById("t9").style.background = sColors[2];
+            winner();
+            
+        } else if (x[2] == sym1 && x[6] == sym1){
+        	document.getElementById("t5").style.background = sColors[2];
+   			document.getElementById("t3").style.background = sColors[2];
+   			document.getElementById("t7").style.background = sColors[2];
+            winner();
+        
+        } else if (x[1] == sym1 && x[7] == sym1){
+        	document.getElementById("t5").style.background = sColors[2];
+   			document.getElementById("t2").style.background = sColors[2];
+   			document.getElementById("t8").style.background = sColors[2];
+            winner();
+        
+        } else if (x[3] == sym1 && x[5] == sym1){
+        	document.getElementById("t5").style.background = sColors[2];
+   			document.getElementById("t4").style.background = sColors[2];
+   			document.getElementById("t6").style.background = sColors[2];
+            winner();           
+        }
+    }
+    
+    if(x[0] == sym1){
+    	if(x[1] == sym1 && x[2] == sym1){
+        	document.getElementById("t1").style.background = sColors[2];
+   			document.getElementById("t2").style.background = sColors[2];
+   			document.getElementById("t3").style.background = sColors[2];
+            winner();
+            
+        } else if (x[3] == sym1 && x[6] == sym1){
+        	document.getElementById("t1").style.background = sColors[2];
+   			document.getElementById("t4").style.background = sColors[2];
+   			document.getElementById("t7").style.background = sColors[2];
+            winner();
+            
+        }
+    }
+    
+    if(x[8] == sym1){
+    	if(x[2] == sym1 && x[5] == sym1){
+   			document.getElementById("t3").style.background = sColors[2];
+   			document.getElementById("t6").style.background = sColors[2];
+   			document.getElementById("t9").style.background = sColors[2];
+            winner();
+            
+        } else if (x[6] == sym1 && x[7] == sym1){
+        	document.getElementById("t7").style.background = sColors[2];
+   			document.getElementById("t8").style.background = sColors[2];
+   			document.getElementById("t9").style.background = sColors[2];
+            winner();
+            
+        }
+    }
+}
+
+function winCheckO(){	
+    for(var i = 0; i < 9; i++){
+    	str = 't' + (i + 1);
+    	x[i] = document.getElementById(str).value;
+    }
+    
+    if(x[4] == sym2){
+    	if(x[0] == sym2 && x[8] == sym2){
+        	document.getElementById("t1").style.background = sColors[2];
+   			document.getElementById("t5").style.background = sColors[2];
+   			document.getElementById("t9").style.background = sColors[2];
+            winner();
+            
+        } else if (x[2] == sym2 && x[6] == sym2){
+        	document.getElementById("t3").style.background = sColors[2];
+   			document.getElementById("t5").style.background = sColors[2];
+   			document.getElementById("t7").style.background = sColors[2];
+            winner();
+        
+        } else if (x[1] == sym2 && x[7] == sym2){
+        	document.getElementById("t5").style.background = sColors[2];
+   			document.getElementById("t2").style.background = sColors[2];
+   			document.getElementById("t8").style.background = sColors[2];
+            winner();
+        
+        } else if (x[3] == sym2 && x[5] == sym2){
+        	document.getElementById("t5").style.background = sColors[2];
+   			document.getElementById("t4").style.background = sColors[2];
+   			document.getElementById("t6").style.background = sColors[2];
+            winner();
+            
+        }
+    }
+    
+    if(x[0] == sym2){
+    	if(x[1] == sym2 && x[2] == sym2){
+        	document.getElementById("t1").style.background = sColors[2];
+   			document.getElementById("t2").style.background = sColors[2];
+   			document.getElementById("t3").style.background = sColors[2];
+            winner();
+            
+        } else if (x[3] == sym2 && x[6] == sym2){
+        	document.getElementById("t1").style.background = sColors[2];
+   			document.getElementById("t4").style.background = sColors[2];
+   			document.getElementById("t7").style.background = sColors[2];
+            winner();
+        }
+    }
+    
+    if(x[8] == sym2){
+    	if(x[2] == sym2 && x[5] == sym2){
+   			document.getElementById("t3").style.background = sColors[2];
+   			document.getElementById("t6").style.background = sColors[2];
+   			document.getElementById("t9").style.background = sColors[2];
+            winner();
+            
+        } else if (x[6] == sym2 && x[7] == sym2){
+        	document.getElementById("t7").style.background = sColors[2];
+   			document.getElementById("t8").style.background = sColors[2];
+   			document.getElementById("t9").style.background = sColors[2];
+            winner();
+            
+        }
+    }
+}
+</script>
+</body>
+</html>

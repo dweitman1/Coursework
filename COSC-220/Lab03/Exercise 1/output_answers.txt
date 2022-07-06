@@ -1,0 +1,95 @@
+(a)
+In populateList the parameter of the integer 
+list is passed by reference, meaning that the 
+memory addresses the IntegerList are passed into
+the function and actually change/populate the 
+elements in the memory addresses for which 
+IntegerList is passed into the function. However,
+populateList2 is passed by value meaning that it
+does not alter the original IntegerList passed 
+into the function and rather just populates the 
+locally created IntegerList.
+
+(b)
+In Default Constructor
+In + Operator Overload
+In Non-Default Constructor
+In Assignment Operator Overload
+In Destructor
+In Destructor
+
+(c)
+The non-default constructor is called.
+The copy constructor is called.
+
+In Non-Default Constructor
+In Non-Default Constructor
+In [] Operator Overload: Calling parameter[0]
+In [] Operator Overload: Calling parameter[1]
+In [] Operator Overload: Calling parameter[2]
+In [] Operator Overload: Calling parameter[3]
+In [] Operator Overload: Calling parameter[4]
+In [] Operator Overload: Calling parameter[5]
+In [] Operator Overload: Calling parameter[6]
+In PopulateList2
+In [] Operator Overload: Calling parameter[0]
+In [] Operator Overload: Calling parameter[1]
+In [] Operator Overload: Calling parameter[2]
+In [] Operator Overload: Calling parameter[3]
+In [] Operator Overload: Calling parameter[4]
+In [] Operator Overload: Calling parameter[5]
+In [] Operator Overload: Calling parameter[6]
+Out PopulateList2
+In Destructor
+In PopulateList
+In [] Operator Overload: Calling parameter[0]
+In [] Operator Overload: Calling parameter[1]
+In [] Operator Overload: Calling parameter[2]
+In [] Operator Overload: Calling parameter[3]
+In [] Operator Overload: Calling parameter[4]
+In [] Operator Overload: Calling parameter[5]
+In [] Operator Overload: Calling parameter[6]
+In [] Operator Overload: Calling parameter[7]
+In [] Operator Overload: Calling parameter[8]
+In [] Operator Overload: Calling parameter[9]
+In [] Operator Overload: Calling parameter[10]
+In [] Operator Overload: Calling parameter[11]
+In [] Operator Overload: Calling parameter[12]
+In [] Operator Overload: Calling parameter[13]
+In [] Operator Overload: Calling parameter[14]
+In [] Operator Overload: Calling parameter[15]
+In [] Operator Overload: Calling parameter[16]
+Out PopulateList
+0 1 4 9 16 25 36 
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 
+In Default Constructor
+In + Operator Overload
+In Non-Default Constructor
+In Assignment Operator Overload
+In Destructor
+In Destructor
+0 1 4 9 16 25 36 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 
+In [] Operator Overload: Calling parameter[4]
+0 1 4 9 100 25 36 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 
+In Non-Default Constructor
+9 100 25 36 0 1 
+In Non-Default Constructor
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 
+In Non-Default Constructor
+9 100 25 36 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 
+9 100 25 36 0 
+9 100 25 36 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+In Non-Default Constructor
+In Assignment Operator Overload
+In Destructor
+0 1 4 9 100 25 36 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 
+0 0 0 1 1 2 3 4 4 5 6 7 8 9 9 10 11 12 13 14 15 16 25 36 
+0 0 0 1 1 2 3 4 4 5 6 7 8 9 9 10 11 12 13 14 15 16 25 36 
+In Destructor
+In Destructor
+In Destructor
+In Destructor
+In Destructor
+In Destructor
+In Destructor
+In Destructor

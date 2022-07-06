@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> My Drawings </title>
+</head>
+
+<body>
+<style>
+	input{
+		color: white;
+		background-color: black;
+		padding: 20px;
+		width: 499px;
+		border: 10px double;
+		border-color: red;
+		font-family: times;
+		font-size: 30px;
+		font-weight: bold;
+		cursor: pointer;
+
+	}
+	
+	body{
+		background-color: cyan;
+
+	}
+
+</style>
+
+<center><h1> <u>My Drawings</u> </h1>
+<canvas id="canv" style="border: 1px solid black"></canvas>
+<br><br>
+<input id="cycle" type="button" value="Click me!">
+</center>
+
+<script>
+	
+	var e = 1;
+	
+	var canvas = document.getElementById("canv");
+	canvas.width = 499;
+	canvas.height = 499;
+	
+	var x = canvas.getContext("2d");
+	draw();
+	
+	
+	document.getElementById("cycle").onclick = function(){
+		e = !e;
+		draw();
+	
+	};
+	
+	function draw(){
+		x.clearRect(0, 0, canvas.width, canvas.height);
+		if(e){
+			x.fillStyle = "white";//Light Green
+			x.fillRect(0, 0, canvas.width, canvas.height);
+			x.beginPath();
+			x.fillStyle = "red";
+			x.arc(250, 250, 200, 0, 2*Math.PI);
+			x.fill();
+			x.fillStyle = "lime";
+			x.fillRect(150, 150, 200, 200);
+			
+		} else {
+			x.fillStyle = "#90EE90";//Light Green
+			x.fillRect(0, 0, canvas.width, canvas.height);
+			
+			x.strokeStyle = "blue";
+			var a = 250;
+			var b = 250;
+			var c = 5;
+			
+			x.beginPath();
+			x.moveTo(a, b);
+	
+			for(var i = 0; i < 128; i++){
+				
+				if(i%2 == 0 && i != 0){
+					c += 5;
+				}
+				if(i%4 == 0){
+					a += c;
+					x.lineTo(a, b);
+		
+				} else if(i%4 == 1){
+					b += c;
+					x.lineTo(a, b);
+		
+				} else if(i%4 == 2){
+					a -= c;
+					x.lineTo(a,b);
+		
+				} else if(i%4 == 3){
+					b -= c;
+					x.lineTo(a, b);
+				
+				}
+				x.stroke();
+			}
+		}
+		
+		x.closePath();
+	}
+	
+	
+</script>
+
+</body>
+<html>

@@ -1,0 +1,305 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+//Program to copy contents off file foo to a file clone
+int main(){
+    
+    //function to use shell command to copy content
+    system("cat foo > clone");
+    
+    exit(0);
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+//Copy file contents with open files
+int main(){
+    
+    int bytes;
+    char buffer[2];
+    
+    int filedes = open("foo", O_RDWR);//Open foo
+    int filedes2 = creat("clone1", 0666);//Create 'clone1' file with rw_rw_rw_
+    
+    //Loop to read filedes and write
+    while((bytes = read(filedes, buffer, 2)) > 0){
+        
+        //write to clone1 and write error check
+        if(write(filedes2, buffer, bytes) != bytes){
+            write(1, "Write error\n", 11);
+        }
+        //read error check
+        if(bytes < 0){
+            write(1, "Read error\n", 10);
+        }
+    }
+    
+    exit(0);
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+//Program to copy foo to clone2 0770 using 32 buffer size
+int main(){
+    
+    int bytes;
+    char buffer[32];
+    
+    int filedes = open("foo", O_RDWR);//Open foo
+    int filedes2 = creat("clone2", 0770);//Create 'clone1' file with rwxrwx___
+    
+    //Loop to read filedes and write
+    while((bytes = read(filedes, buffer, 32)) > 0){
+        
+        //write to clone1 and write error check
+        if(write(filedes2, buffer, bytes) != bytes){
+            write(1, "Write error\n", 11);
+        }
+        //read error check
+        if(bytes < 0){
+            write(1, "Read error\n", 10);
+        }
+        
+        
+    }
+    
+    exit(0);
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+
+//Program that appends foo and foo1 to created file foo12 0760
+int main(){
+    
+    int bytes;
+    int offset;
+    char buffer[2];
+    
+    int filedes = open("foo", O_RDWR, 0770);//open foo
+    int filedes2 = open("foo1", O_RDWR, 0770);//open foo1
+    int filedes3 = creat("foo12", 0760);//create foo 12 rwxrw____
+    
+    //Gives foo12 some data to make clear the appending
+    write(filedes3, "Some file data", 14);
+    offset = 0;
+    offset = lseek(filedes3, 0, SEEK_END);
+    
+    
+    write(filedes3, "\n", 1);//new line to signify append
+    
+    //Read foo to append to foo12
+    while((bytes = read(filedes, buffer, 2)) > 0){
+        
+        //append and check write error
+        if(write(filedes3, buffer, bytes) != bytes){
+            write(1, "Write error\n", 11);
+        }
+        //check read error
+        if(bytes < 0){
+            write(1, "Read error\n", 10);
+        }
+    }
+    
+    //Read foo1 to append to foo12
+    while((bytes = read(filedes2, buffer, 2)) > 0){
+        
+        //append and check write error
+        if(write(filedes3, buffer, bytes) != bytes){
+            write(1, "Write error\n", 11);
+        }
+        //check read error
+        if(bytes < 0){
+            write(1, "Read error\n", 10);
+        }
+        
+        
+    }
+    
+    //printf("The offset is:%d\n", offset);
+    exit(0);
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+
+int main(){
+    
+    int bytes;
+    int offset;
+    int count = -1;
+    char buffer[1];
+    
+    int filedes = open("foo", O_RDWR, 0770);//open foo 
+    int filedes2 = creat("foorev", 0760);////create file for reversed foo
+    
+    offset = lseek(filedes, -2, SEEK_END);
+    
+    //loop to read byte by byte until beginning of foo is reached
+    while (read(filedes, buffer, 1) > 0 && offset > -1){
+        offset = lseek(filedes, -1, SEEK_CUR);//sets offset to next reversed string
+        write(filedes2, buffer, 1);//writes to foorev
+        offset = lseek(filedes, -1, SEEK_CUR);//sets offset back to next reversed string
+        
+    }
+    
+    //cleans up output
+    offset = lseek(filedes2, 0, SEEK_END);
+    write(filedes2, "\n", 1);
+    
+    exit(0);
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+//Changes char* to an int value
+int myatoi(char *st){
+    int ret = 0;
+    int sign = 1;
+    int i = 0;
+    
+    if(st[0] == '-'){
+        sign = -1;
+        i++;
+    }
+    
+    for(; st[i] != '\0'; ++i){
+        ret = ret*10 + st[i] -'0';
+    }
+    
+    return sign*ret;
+}
+
+//Adds command line arguments and prints the sum
+int main(int argc, char* argv[]){
+    
+    //command line arguments check
+   if(argc == 1){
+        printf("No parameters to sum!");
+          printf("\n");
+        exit(1);   
+    }
+    
+    int sum = 0;
+    //Loop to sum all arguments
+    for(int i = 1; i < argc; i++){
+        sum += myatoi(argv[i]);
+    }
+    
+    //prints Summation
+    printf("Summation: %d", sum);
+    printf("\n");
+    
+    exit(0);
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+//changes int to char*
+char* myitoa(int x, char *str){
+  
+  int a = (x%10);
+  int b = (x%100)/10;
+  int c = (x%1000)/100;
+  
+  str[0] = '0' + c;
+  str[1] = '0' + b;
+  str[2] = '0' + a;
+  
+  //printf("%s\n",str);
+  
+  return str;
+  
+}
+
+//takes a file from command line and converts to ascii value in another file
+int main(int argc, char *argv[]){
+  
+    //checks arguments passed
+  if(argc != 3){
+    write(1, "Invalid parameters\n",  19);
+    exit(1);
+  }
+  
+  //opens two files passed
+  int filedes = open(argv[1], O_RDONLY);
+  int filedes2 = open(argv[2], O_RDWR);
+  
+  //checks open error
+  if(filedes == -1 || filedes2 == -1){
+    write(1, "Cannot open files properly", 26);
+  }
+  
+  char buffer[1];
+  char str[3];
+  int ASC;
+  char b;
+  char c[1];
+  
+  //reads each char and sends to new file
+  while(read(filedes, buffer, 1) > 0){
+ 
+    b = buffer[0];
+    //printf("%c",b);
+    ASC = b;
+    //printf("%d\n", ASC);
+    
+    // '0' + 8 -> ascii for '8'
+    write(filedes2, myitoa(ASC, str), 3);
+    write(filedes2, " ", 1);
+    
+  }
+  exit(0);
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+//Doesn't work
+int palind(int fd1, int fd2){
+    
+    char buf1[1];
+    char buf2[1];
+    
+    int offset;
+    
+    read(fd1, buf1, 1);
+    offset = lseek(fd2, -2, SEEK_END);
+    read(fd2, buf2, 1);
+    
+}
+
+int main(int argc, char *argv[]){
+    
+    if(argc != 2){
+        printf("Need one file\n");
+    }
+    
+    int fd1 = open(argv[1], O_RDWR);
+    int fd2 = dup(fd1);
+    
+    palind(fd1, fd2);
+    
+    exit(0);
+}
+
+

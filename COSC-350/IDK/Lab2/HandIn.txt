@@ -1,0 +1,83 @@
+Daniel Weitman
+COSC-350
+
+---TASK 1---
+1) \s-\v\$
+
+2) EDITOR: /usr/bin/emacs -nw
+
+   HOME: /mnt/linuxlab/home/dweitman1
+   
+   HOSTNAME: hpcl4-6
+   
+   LD_LIBRARY_PATH: :/usr/local/cuda/lib64
+   
+   LESS: *EMPTY*
+   
+   MAIL: /var/spool/mail/dweitman1
+   
+   MANPATH: /opt/rh/rh-java-common/root/usr/share
+   /man:/opt/rh/rh-eclipse46/root/usr/share
+   /man::/opt/puppetlabs/puppet/share/man
+    
+   MORE: *EMPTY*
+   
+   PAGER: less
+
+   PATH: /usr/local/cuda/bin:/opt/rh/rh-java-common/root
+   /usr/bin:/opt/rh/rh-eclipse46/root/usr/bin:/opt/rh
+   /rh-eclipse46/root/usr/lib/jvm/java/bin:/usr/lib64
+   /qt-3.3/bin:/usr/lib64/ccache:/usr/local/bin:/usr/local
+   /sbin:/usr/bin:/usr/sbin:/bin:/sbin:/opt/puppetlabs/bin:
+   /mnt/linuxlab/home/dweitman1/bin:/mnt/linuxlab/home/dweitman1
+   /bin/scripts
+   
+   PWD: /mnt/linuxlab/home/dweitman1/COSC_350
+   
+   SHELL: /bin/bash
+   
+   TERM: xterm
+   
+   USER: dweitman1
+
+---TASK 2---
+1) \s-\v\$
+
+2) PS1="[COSC350 basecwd]"
+
+3) PS1="\s-\v\$"
+
+---TASK 3---
+1) 
+
+---TASK 4---
+1) 1. touch bar.txt
+   2. ls notfile 2> bar.txt
+   3. cat bar.txt
+   
+2) ls notfile 2> /dev/null
+
+3) 1. echo "3">foo
+   2. echo "5">>foo
+   3. echo "2">>foo
+   4. echo "1">>foo
+   
+4) cat foo >bar
+
+5) sort < foo
+   3, 5, 2, 1 were sorted in ascending order.
+
+6) sort < foo > bar
+
+---TASK 5---
+1) 
+
+---TASK 6---
+   
+   
+   
+   
+   
+   
+   
+

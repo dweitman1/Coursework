@@ -1,0 +1,313 @@
+Enter size of testing array: 100
+
+Enter how you would like to populate the array...
+(1) Random {1-100} 
+(2) Random {1-3} 
+(3) Ascending {Start: 1, Index: 1, End: n} 
+(4) Descending {Start: n, Index: 1, End: 1}
+(1-4): 1
+
+
+|Quick Sort|
+finished at Wed Feb 13 14:26:32 2019
+elapsed time: 1.1401e-05s
+Sorted: True
+
+|Merge Sort|
+Merge sort used 2250 comparisons to sort the array.
+finished at Wed Feb 13 14:26:32 2019
+elapsed time: 3.4991e-05s
+Sorted: True
+
+Run again? 
+(1) Yes 
+(2) No
+1
+
+Enter size of testing array: 10000
+
+Enter how you would like to populate the array...
+(1) Random {1-100} 
+(2) Random {1-3} 
+(3) Ascending {Start: 1, Index: 1, End: n} 
+(4) Descending {Start: n, Index: 1, End: 1}
+(1-4): 1
+
+
+|Quick Sort|
+finished at Wed Feb 13 14:26:38 2019
+elapsed time: 0.0077226s
+Sorted: True
+
+|Merge Sort|
+Merge sort used 458286 comparisons to sort the array.
+finished at Wed Feb 13 14:26:38 2019
+elapsed time: 0.00162119s
+Sorted: True
+
+Run again? 
+(1) Yes 
+(2) No
+1
+
+Enter size of testing array: 100000
+
+Enter how you would like to populate the array...
+(1) Random {1-100} 
+(2) Random {1-3} 
+(3) Ascending {Start: 1, Index: 1, End: n} 
+(4) Descending {Start: n, Index: 1, End: 1}
+(1-4): 1
+
+
+|Quick Sort|
+1
+finished at Wed Feb 13 14:26:43 2019
+elapsed time: 0.495388s
+Sorted: True
+
+|Merge Sort|
+Merge sort used 5740125 comparisons to sort the array.
+finished at Wed Feb 13 14:26:43 2019
+elapsed time: 0.0170016s
+Sorted: True
+
+Run again? 
+(1) Yes 
+(2) No
+
+Enter size of testing array: 100
+
+Enter how you would like to populate the array...
+(1) Random {1-100} 
+(2) Random {1-3} 
+(3) Ascending {Start: 1, Index: 1, End: n} 
+(4) Descending {Start: n, Index: 1, End: 1}
+(1-4): 2
+
+
+|Quick Sort|
+finished at Wed Feb 13 14:26:56 2019
+elapsed time: 2.5419e-05s
+Sorted: True
+
+|Merge Sort|
+Merge sort used 2109 comparisons to sort the array.
+finished at Wed Feb 13 14:26:56 2019
+elapsed time: 1.1743e-05s
+Sorted: True
+
+Run again? 
+(1) Yes 
+(2) No
+1
+
+Enter size of testing array: 10000
+
+Enter how you would like to populate the array...
+(1) Random {1-100} 
+(2) Random {1-3} 
+(3) Ascending {Start: 1, Index: 1, End: n} 
+(4) Descending {Start: n, Index: 1, End: 1}
+(1-4): 2
+
+
+|Quick Sort|
+finished at Wed Feb 13 14:27:03 2019
+elapsed time: 0.169219s
+Sorted: True
+
+|Merge Sort|
+Merge sort used 423450 comparisons to sort the array.
+finished at Wed Feb 13 14:27:03 2019
+elapsed time: 0.000937519s
+Sorted: True
+
+Run again? 
+(1) Yes 
+(2) No
+1
+
+Enter size of testing array: 100000
+
+Enter how you would like to populate the array...
+(1) Random {1-100} 
+(2) Random {1-3} 
+(3) Ascending {Start: 1, Index: 1, End: n} 
+(4) Descending {Start: n, Index: 1, End: 1}
+(1-4): 2
+
+
+|Quick Sort|
+finished at Wed Feb 13 14:27:25 2019
+elapsed time: 15.0578s
+Sorted: True
+
+|Merge Sort|
+Merge sort used 5282485 comparisons to sort the array.
+finished at Wed Feb 13 14:27:25 2019
+elapsed time: 0.0133127s
+Sorted: True
+
+Run again? 
+(1) Yes 
+(2) No
+1
+
+Enter size of testing array: 100
+
+Enter how you would like to populate the array...
+(1) Random {1-100} 
+(2) Random {1-3} 
+(3) Ascending {Start: 1, Index: 1, End: n} 
+(4) Descending {Start: n, Index: 1, End: 1}
+(1-4): 3
+
+
+|Quick Sort|
+finished at Wed Feb 13 14:27:35 2019
+elapsed time: 0.000144647s
+Sorted: True
+
+|Merge Sort|
+Merge sort used 2155 comparisons to sort the array.
+finished at Wed Feb 13 14:27:35 2019
+elapsed time: 1.0755e-05s
+Sorted: True
+
+Run again? 
+(1) Yes 
+(2) No
+1
+
+Enter size of testing array: 10000
+
+Enter how you would like to populate the array...
+(1) Random {1-100} 
+(2) Random {1-3} 
+(3) Ascending {Start: 1, Index: 1, End: n} 
+(4) Descending {Start: n, Index: 1, End: 1}
+(1-4): 3
+
+
+|Quick Sort|
+finished at Wed Feb 13 14:28:00 2019
+elapsed time: 0.125067s
+Sorted: True
+
+|Merge Sort|
+Merge sort used 415247 comparisons to sort the array.
+finished at Wed Feb 13 14:28:00 2019
+elapsed time: 0.000958392s
+Sorted: True
+
+Run again? 
+(1) Yes 
+(2) No
+1
+
+Enter size of testing array: 100000
+
+Enter how you would like to populate the array...
+(1) Random {1-100} 
+(2) Random {1-3} 
+(3) Ascending {Start: 1, Index: 1, End: n} 
+(4) Descending {Start: n, Index: 1, End: 1}
+(1-4): 3
+
+
+|Quick Sort|
+finished at Wed Feb 13 14:28:18 2019
+elapsed time: 11.0236s
+Sorted: True
+
+|Merge Sort|
+Merge sort used 5145663 comparisons to sort the array.
+finished at Wed Feb 13 14:28:18 2019
+elapsed time: 0.00928182s
+Sorted: True
+
+Run again? 
+(1) Yes 
+(2) No
+1
+
+Enter size of testing array: 100
+
+Enter how you would like to populate the array...
+(1) Random {1-100} 
+(2) Random {1-3} 
+(3) Ascending {Start: 1, Index: 1, End: n} 
+(4) Descending {Start: n, Index: 1, End: 1}
+(1-4): 4
+
+
+|Quick Sort|
+finished at Wed Feb 13 14:28:31 2019
+elapsed time: 9.6679e-05s
+Sorted: True
+
+|Merge Sort|
+Merge sort used 1759 comparisons to sort the array.
+finished at Wed Feb 13 14:28:31 2019
+elapsed time: 2.9106e-05s
+Sorted: True
+
+Run again? 
+(1) Yes 
+(2) No
+1
+
+Enter size of testing array: 10000
+
+Enter how you would like to populate the array...
+(1) Random {1-100} 
+(2) Random {1-3} 
+(3) Ascending {Start: 1, Index: 1, End: n} 
+(4) Descending {Start: n, Index: 1, End: 1}
+(1-4): 4
+
+
+|Quick Sort|
+finished at Wed Feb 13 14:28:36 2019
+elapsed time: 0.3027s
+Sorted: True
+
+|Merge Sort|
+Merge sort used 341839 comparisons to sort the array.
+finished at Wed Feb 13 14:28:36 2019
+elapsed time: 0.000737483s
+Sorted: True
+
+Run again? 
+(1) Yes 
+(2) No
+1
+
+Enter size of testing array: 100000
+
+Enter how you would like to populate the array...
+(1) Random {1-100} 
+(2) Random {1-3} 
+(3) Ascending {Start: 1, Index: 1, End: n} 
+(4) Descending {Start: n, Index: 1, End: 1}
+(1-4): 4
+
+
+|Quick Sort|
+finished at Wed Feb 13 14:29:13 2019
+elapsed time: 28.9139s
+Sorted: True
+
+|Merge Sort|
+Merge sort used 4252879 comparisons to sort the array.
+finished at Wed Feb 13 14:29:13 2019
+elapsed time: 0.0100787s
+Sorted: True
+
+Run again? 
+(1) Yes 
+(2) No
+2
+
+

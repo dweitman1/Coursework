@@ -1,0 +1,57 @@
+body{
+	color: white;
+	background-color: #bf0000;
+	margin: 15px;
+}
+
+fieldset{
+		border: 5px groove #ba03b4;
+		width: 225px;
+		background-color: white;
+}
+
+a{
+		color: #bf0000;
+}
+
+table{
+	border: 4px solid black;
+	color: black;
+}
+th{ 
+	padding:10px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: white
+}
+.cosc119{
+	background-color: #009606;
+}
+.cosc320{
+	background-color: #7e8899;
+}
+.cosc350{
+	background-color: #478dff;
+}
+.cosc362{
+	background-color: #ff4242;
+}
+.one:hover{
+		font-weight: bold;
+		color: white;
+		background-color: #bf0000;
+}
+
+.two{
+	color: white;
+	
+}
+.two:hover{
+	font-weight: bold;
+	color: #bf0000;
+	background-color: white;
+}
+
+.three{
+	
+	
+}

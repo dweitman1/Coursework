@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head>
+	<meta charset="UTF-8"/>
+	<title>Calculator</title>
+	</head>
+	<body>
+		<style>
+		
+			body{
+				background-color: #4286f4;
+			}
+			.operation{
+				padding: 10px;
+				font-size: 40px;
+				width: 75px;
+				height: 75px;
+				color: white;
+				border-color: lime;
+				background-color: blue;
+			}
+			.operation:hover{
+				color: green;
+				border-color: blue;
+				background-color: white;	
+			}
+			fieldset{
+				border: 5px solid lime;
+				background-color: blue;
+				width: 200px;
+				height: 100px;
+				color: white;
+			}
+			
+		</style>
+		<center>
+			<h1>My Calculator</h1>
+			
+			<p>
+			<input type="text" id="left" placeholder="Operand 1" />
+			<input type="text" id="right" placeholder="Operand 2" />
+			</br></br>
+			
+			<input class="operation" type="button" id="add" value="+" />
+			<input class="operation" type="button" id="subtract" value="-" />
+			<input class="operation" type="button" id="multiply" value="*" /></br>
+			<input class="operation" type="button" id="divide" value="&#247" />
+			<input class="operation" type="button" id="modulo" value="%" />
+			<input class="operation" type="button" id="raise" value="^" /></br>
+			<input class="operation" type="button" id="sum" value="&sum;" />
+			<input class="operation" type="button" id="root" value="&#8730" />
+			<input class="operation" type="button" id="negate" value="&not;" /></br>
+			</p>
+			
+			<fieldset>
+			<p id="result"></p></fieldset>
+			<script src="calc.js"></script>
+			</center>
+	</body>
+</html>
+
